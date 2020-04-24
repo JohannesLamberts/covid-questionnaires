@@ -65,7 +65,12 @@
 </template>
 
 <script>
+import netlifyIdentity from 'netlify-identity-widget'
+
 export default {
+  mounted() {
+    netlifyIdentity.init()
+  },
   data() {
     return {
       clipped: false,
