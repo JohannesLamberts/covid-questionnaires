@@ -1,5 +1,5 @@
 {
-  "name": "covid-questionaires",
+  "name": "covid-questionnaires",
   "version": "1.0.0",
   "description": "Git based CMS for information about the Coronav-Virus",
   "author": "Johannes Lamberts",
@@ -8,7 +8,7 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate && node ./scripts/copyQuestionaires.js",
+    "generate": "nuxt generate && node ./scripts/copyQuestionnaires.js",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "test": "jest"
   },

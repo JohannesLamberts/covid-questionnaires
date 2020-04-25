@@ -1,5 +1,5 @@
 <template>
-  <v-progress-linear v-if="!questionaire || saving" indeterminate />
+  <v-progress-linear v-if="!questionnaire || saving" indeterminate />
   <form v-else @submit.prevent="submit">
     <v-container>
       <v-row>
@@ -18,24 +18,24 @@
       <v-tab>Ergebnisbaum</v-tab>
       <v-tab-item>
         <v-text-field
-          v-model="questionaire.meta.description"
+          v-model="questionnaire.meta.description"
           label="Beschreibung"
         />
       </v-tab-item>
       <v-tab-item>
-        <div v-for="question of questionaire.questions" :key="question.ident">
+        <div v-for="question of questionnaire.questions" :key="question.ident">
           <h4>{{ question.id }}</h4>
-          <questionaire-question :question="question" />
+          <questionnaire-question :question="question" />
         </div>
       </v-tab-item>
       <v-tab-item>
-        {{ questionaire.derived }}
+        {{ questionnaire.derived }}
       </v-tab-item>
       <v-tab-item>
-        {{ questionaire.results }}
+        {{ questionnaire.results }}
       </v-tab-item>
       <v-tab-item>
-        {{ questionaire.resultComputation }}
+        {{ questionnaire.resultComputation }}
       </v-tab-item>
     </v-tabs>
   </form>
@@ -44,22 +44,22 @@
 <script>
 import { safeDump, safeLoad } from 'js-yaml'
 import { readFile, writeFile } from '~/api/git'
-import QuestionaireQuestion from '~/components/questionaire-question'
+import QuestionnaireQuestion from '~/components/questionnaire-question'
 
 export default {
-  name: 'QuestionaireEditor',
-  components: { QuestionaireQuestion },
+  name: 'QuestionnaireEditor',
+  components: { QuestionnaireQuestion },
   data() {
     return {
       commitMessage: '',
-      questionaire: null,
-      questionaireSha: '',
+      questionnaire: null,
+      questionnaireSha: '',
       saving: false
     }
   },
   computed: {
-    questionaireAsYaml() {
-      return safeDump(this.questionaire)
+    questionnaireAsYaml() {
+      return safeDump(this.questionnaire)
     }
   },
   mounted() {
@@ -67,18 +67,18 @@ export default {
   },
   methods: {
     async readFile() {
-      const questionaire = await readFile(
-        'questionaires/should-i-get-tested.yaml'
+      const questionnaire = await readFile(
+        'questionnaires/should-i-get-tested.yaml'
       )
-      this.questionaire = safeLoad(questionaire.content)
-      this.questionaireSha = questionaire.sha
+      this.questionnaire = safeLoad(questionnaire.content)
+      this.questionnaireSha = questionnaire.sha
     },
     async submit() {
       this.saving = true
-      await writeFile('questionaires/should-i-get-tested.yaml', {
+      await writeFile('questionnaires/should-i-get-tested.yaml', {
         message: this.commitMessage,
-        content: this.questionaireAsYaml,
-        sha: this.questionaireSha
+        content: this.questionnaireAsYaml,
+        sha: this.questionnaireSha
       })
       await this.readFile()
       this.commitMessage = ''

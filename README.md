@@ -1,4 +1,4 @@
-# covid-questionaires
+# covid-questionnaires
 
 > Git based CMS for information about the Coronav-Virus
 
@@ -26,4 +26,4 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 ### Login
 
 When the page is first opened it will prompt for Development Settings.
-Set `https://covid-questionaires.netlify.app` as the Netlify URL.
+Set `https://covid-questionnaires.netlify.app` as the Netlify URL.

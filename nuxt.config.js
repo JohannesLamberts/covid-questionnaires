@@ -56,7 +56,7 @@ export default {
     customVariables: ['~/assets/variables.scss']
   },
   proxy: {
-    '/.netlify': 'https://covid-questionaires.netlify.app/'
+    '/.netlify': 'https://covid-questionnaires.netlify.app/'
   },
   build: {
     extend(config) {

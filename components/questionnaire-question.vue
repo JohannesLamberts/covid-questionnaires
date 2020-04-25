@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'QuestionaireQuestion',
+  name: 'QuestionnaireQuestion',
   props: {
     question: {
       type: Object,

@@ -1,9 +1,9 @@
 <template>
-  <questionaire-editor />
+  <questionnaire-editor />
 </template>
 <script>
-import QuestionaireEditor from '~/components/questionaire-editor'
+import QuestionnaireEditor from '~/components/questionnaire-editor'
 export default {
-  components: { QuestionaireEditor }
+  components: { QuestionnaireEditor }
 }
 </script>
