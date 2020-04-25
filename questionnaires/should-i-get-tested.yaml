@@ -1,4 +1,5 @@
-description: A questionaire to
+meta:
+  description: A questionaire to
 questions:
   - id: symptoms
     description: Asking for general symptoms that could indicate COVID-19
