@@ -1,0 +1,135 @@
+questions:
+  symptoms:
+    question: Haben Sie eines oder mehrere der folgenden Symptome?
+    description: |-
+      - allgemeines Krankheitsgefühl
+      - laufende Nase
+      - Fieber
+      - Husten
+      - Halsschmerzen
+      - Atembeschwerden
+  workRiskContact:
+    question: Kommen Sie bei der Arbeit oder ehrenamtlichen Tätigkeit mit Menschen in
+      Kontakt, die ein hohes Risiko für einen schweren Verlauf einer Corona-Virus-Infektion
+      haben (z.B. im Krankenhaus oder der Altenpflege)?
+  directContact:
+    question: Hatten Sie in den letzten 14 Tagen direkten Kontakt zu einer Person, die
+      positiv auf eine Corona-Infektion getestet wurde?
+    description: |-
+      Direkten Kontakt hatten Sie, wenn...
+      - Sie mit dieser Person im selben Haushalt leben ODER
+      - Sie mindestens 15 Minuten persönlichen Kontakt zu dieser Person, zum Beispiel in einem Gespräch hatten ODER
+      - Körperflüssigkeiten auf Sie übertragen werden konnten, z.B. durch Küssen, Anniesen oder Anhusten
+  ageRisk:
+    question: Sind Sie 50 Jahre oder älter?
+  patientHistoryRisk:
+    question: Haben Sie eine oder mehrere der folgenden Diagnosen?
+    description: |-
+      - Herzerkrankung
+      - Bluthochdruck
+      - Diabetes
+      - Fettleibigkeit
+      - Lungenerkrankung
+      - Lebererkrankung
+      - Nierenerkrankung
+  patientImmuneRisk:
+    question: Haben Sie ein unterdrücktes Immunsystem?
+    description: |-
+      Zum Beispiel wegen
+      - Organtransplantation
+      - Krebserkrankung
+      - Chemotherapie
+      - Einnahme von Cortison-Tabletten
+      - HIV
+results:
+  symptoms_withContact_risk:
+    headline: Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt! Sie sollten
+      außerdem vorsorglich Ihren Hausarzt anrufen.
+    subline: Bei Ihnen besteht erhöhter Verdacht auf eine Corona-Infektion. Sie haben
+      aufgrund von Alter oder Vorerkrankungen ein erhöhtes Risiko für einen schwereren
+      Krankheitsverlauf.
+    instructions:
+      - bewahren Sie Ruhe
+      - vermeiden Sie direkten Personenkontakt
+      - wenn Sie das Haus verlassen, tragen Sie bitte einen Mundschutz
+      - husten und niesen Sie nur in Ihre Armbeuge
+      - waschen Sie oft und gründliche Ihre Hände
+      - halten Sie 2m Abstand zu anderen Personen
+  symptoms_withContact_noRisk:
+    headline: Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt!
+    subline: Bei Ihnen besteht erhöhter Verdacht auf eine Corona-Infektion.
+    instructions:
+      - bewahren Sie Ruhe
+      - vermeiden Sie direkten Personenkontakt
+      - wenn Sie das Haus verlassen, tragen Sie bitte einen Mundschutz
+      - husten und niesen Sie nur in Ihre Armbeuge
+      - waschen Sie oft und gründliche Ihre Hände
+      - halten Sie 2m Abstand zu anderen Personen
+  symptoms_withoutContact_risk:
+    headline: Sie müssen sich vorerst NICHT beim Gesundheitsamt melden. Sie sollten
+      allerdings vorsorglich Ihren Hausarzt anrufen.
+    subline: Derzeit besteht bei Ihnen KEIN erhöhter Verdacht auf eine Corona-Infektion.
+      Sie haben aufgrund von Alter oder Vorerkrankungen im Falle einer Infektion
+      ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.
+    instructions:
+      - bewahren Sie Ruhe
+      - verlassen Sie Ihre Wohnung nur, wenn unbedingt notwendig und tragen Sie außer
+        Haus einen Mundschutz
+      - husten und niesen Sie nur in Ihre Armbeuge
+      - waschen Sie oft und gründliche Ihre Hände
+      - halten Sie 2m Abstand zu anderen Personen
+  symptoms_withoutContact_noRisk:
+    headline: Sie müssen sich vorerst NICHT beim Gesundheitsamt melden.
+    subline: Derzeit besteht bei Ihnen KEIN erhöhter Verdacht auf eine Corona-Infektion.
+    instructions:
+      - bewahren Sie Ruhe
+      - kontaktieren Sie telefonisch Ihren Hausarzt, wenn sich Ihre Symptome verschlechtern
+      - verlassen Sie Ihre Wohnung nur, wenn unbedingt notwendig und tragen Sie außer
+        Haus einen Mundschutz
+      - husten und niesen Sie nur in Ihre Armbeuge
+      - waschen Sie oft und gründliche Ihre Hände
+      - halten Sie 2m Abstand zu anderen Personen
+  noFeatures_noRisk:
+    headline: Sie müssen sich vorerst NICHT beim Gesundheitsamt melden.
+    subline: Derzeit besteht bei Ihnen KEIN erhöhter Verdacht auf eine Corona-Infektion.
+    instructions:
+      - bewahren Sie Ruhe
+      - bleiben Sie zu Hause
+      - husten und niesen Sie nur in Ihre Armbeuge
+      - waschen Sie oft und gründliche Ihre Hände
+      - halten Sie 2m Abstand zu anderen Personen
+  noFeatures_risk:
+    headline: Sie müssen sich vorerst NICHT beim Gesundheitsamt melden.
+    subline: Derzeit besteht bei Ihnen KEIN erhöhter Verdacht auf eine Corona-Infektion.
+      Sie haben aufgrund von Alter oder Vorerkrankungen im Falle einer Infektion
+      ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.
+    instructions:
+      - bewahren Sie Ruhe
+      - bleiben Sie zu Hause
+      - husten und niesen Sie nur in Ihre Armbeuge
+      - waschen Sie oft und gründliche Ihre Hände
+      - halten Sie 2m Abstand zu anderen Personen
+  directContact_risk:
+    headline: Bitte melden sie sich bei Ihrem zuständigen Gesundheitsamt! Sie hatten
+      Kontakt zu einer infizierten Person.
+    subline: Derzeit besteht bei Ihnen KEIN erhöhter Verdacht auf eine Corona-Infektion.
+      Sie haben aufgrund von Alter oder Vorerkrankungen im Falle einer Infektion
+      ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.
+    instructions:
+      - bewahren Sie Ruhe
+      - bleiben Sie zu Hause
+      - vermeiden Sie direkten Personenkontakt
+      - husten und niesen Sie nur in Ihre Armbeuge
+      - waschen Sie oft und gründliche Ihre Hände
+      - halten Sie 2m Abstand zu anderen Personen
+  directContact_noRisk:
+    headline: Bitte melden sie sich bei Ihrem zuständigen Gesundheitsamt! Sie hatten
+      Kontakt zu einer infizierten Person.
+    subline: Derzeit besteht bei Ihnen KEIN erhöhter Verdacht auf eine Corona-Infektion.
+    instructions:
+      - bewahren Sie Ruhe
+      - bleiben Sie zu Hause
+      - vermeiden Sie direkten Personenkontakt
+      - husten und niesen Sie nur in Ihre Armbeuge
+      - waschen Sie oft und gründliche Ihre Hände
+      - halten Sie 2m Abstand zu anderen Personen
