@@ -1,11 +1,13 @@
 meta:
-  description: A questionaire to
+  description: A questionnaire to check if one should get tested for COVID-19
 questions:
   - id: symptoms
     description: Asking for general symptoms that could indicate COVID-19
     type: boolean
   - id: directContact
-    description: Asking for direct contact with a positively testet person, that would indicate the possibility of a transmission
+    description: >-
+      Asking for direct contact with a positively testet person, that would
+      indicate the possibility of a transmission
     type: boolean
   - id: workRiskContact
     description: Asking for the risk of infekting people with high risk factors at work
@@ -17,7 +19,9 @@ questions:
     description: Asking for diagnoses that indicate a severe course of COVID-19
     type: boolean
   - id: patientImmuneRisk
-    description: Asking for immune system deficiencies or supressing medicaments, that indicate a severe course of COVID-19
+    description: >-
+      Asking for immune system deficiencies or supressing medicaments, that
+      indicate a severe course of COVID-19
     type: boolean
     enableIf:
       var: variables.hasRisk.value
