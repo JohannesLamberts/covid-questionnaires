@@ -1,7 +1,7 @@
 import colors from 'vuetify/es5/util/colors'
 
 export default {
-  mode: 'universal',
+  mode: 'spa',
   /*
    ** Headers of the page
    */
@@ -40,7 +40,8 @@ export default {
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy'
   ],
   /*
    ** Axios module configuration
@@ -68,13 +69,7 @@ export default {
       }
     }
   },
-  /*
-   ** Build configuration
-   */
-  build: {
-    /*
-     ** You can extend webpack config here
-     */
-    extend(config, ctx) {}
+  proxy: {
+    '/.netlify': 'https://covid-questionaires.netlify.app/'
   }
 }
