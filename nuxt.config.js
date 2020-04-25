@@ -71,5 +71,22 @@ export default {
   },
   proxy: {
     '/.netlify': 'https://covid-questionaires.netlify.app/'
+  },
+  build: {
+    extend(config, ctx) {
+      config.module.rules.push({
+        test: /\.ya?ml$/,
+        use: 'js-yaml-loader'
+      })
+      if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/,
+          options: { fix: true }
+        })
+      }
+    }
   }
 }

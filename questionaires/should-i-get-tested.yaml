@@ -1,0 +1,74 @@
+description: A questionaire to
+questions:
+  - id: symptoms
+    description: Asking for general symptoms that could indicate COVID-19
+    type: boolean
+  - id: directContact
+    description: Asking for direct contact with a positively testet person, that would indicate the possibility of a transmission
+    type: boolean
+  - id: workRiskContact
+    description: Asking for the risk of infekting people with high risk factors at work
+    type: boolean
+  - id: ageRisk
+    description: Asking for age as a risk factor (50 years or older)
+    type: boolean
+  - id: patientHistoryRisk
+    description: Asking for diagnoses that indicate a severe course of COVID-19
+    type: boolean
+  - id: patientImmuneRisk
+    description: Asking for immune system deficiencies or supressing medicaments, that indicate a severe course of COVID-19
+    type: boolean
+    enableIf:
+      var: variables.hasRisk.value
+derived:
+  - id: hasRisk
+    value:
+      or:
+        - var: questions.workRiskContact.value
+        - var: questions.patientHistoryRisk.value
+        - var: questions.patientImmuneRisk.value
+  - id: someContact
+    value:
+      or:
+        - var: questions.patientHistoryRisk.value
+        - var: questions.patientHistoryRisk.value
+results:
+  - id: symptoms_withContact_risk
+    instructions:
+      - callHotline
+  - id: symptoms_withContact_noRisk
+    instructions:
+      - callHotline
+  - id: symptoms_withoutContact_risk
+  - id: symptoms_withoutContact_noRisk
+  - id: noFeatures_noRisk
+  - id: noFeatures_risk
+  - id: directContact_risk
+    instructions:
+      - callHotline
+  - id: directContact_noRisk
+    instructions:
+      - callHotline
+resultComputation:
+  if:
+    - var: questions.systems.value
+    - if:
+        - var: derived.someContact.value
+        - if:
+            - var: derived.hasRisk.value
+            - symptoms_withContact_risk
+            - symptoms_withContact_noRisk
+        - if:
+            - var: derived.hasRisk.value
+            - symptoms_withoutContact_risk
+            - symptoms_withoutContact_noRisk
+    - if:
+        - var: derived.directContact.value
+        - if:
+            - var: derived.hasRisk.value
+            - directContact_risk
+            - directContact_noRisk
+        - if:
+            - var: derived.hasRisk.value
+            - noFeatures_risk
+            - noFeatures_noRisk
