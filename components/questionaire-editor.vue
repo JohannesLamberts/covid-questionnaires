@@ -10,29 +10,45 @@
       </v-row>
       <v-divider />
     </v-container>
-    <h3>Allgemeines</h3>
-    {{ questionaire.meta }}
-    <v-text-field
-      v-model="questionaire.meta.description"
-      label="Beschreibung"
-    />
-    <h3>Fragen</h3>
-    {{ questionaire.questions }}
-    <h3>Berechnungen</h3>
-    {{ questionaire.derived }}
-    <h3>Ergebnisse</h3>
-    {{ questionaire.results }}
-    <h3>Ergebnisbaum</h3>
-    {{ questionaire.resultComputation }}
+    <v-tabs vertical>
+      <v-tab>Allgemeines</v-tab>
+      <v-tab>Fragen</v-tab>
+      <v-tab>Berechnungen</v-tab>
+      <v-tab>Ergebnisse</v-tab>
+      <v-tab>Ergebnisbaum</v-tab>
+      <v-tab-item>
+        <v-text-field
+          v-model="questionaire.meta.description"
+          label="Beschreibung"
+        />
+      </v-tab-item>
+      <v-tab-item>
+        <div v-for="question of questionaire.questions" :key="question.ident">
+          <h4>{{ question.id }}</h4>
+          <questionaire-question :question="question" />
+        </div>
+      </v-tab-item>
+      <v-tab-item>
+        {{ questionaire.derived }}
+      </v-tab-item>
+      <v-tab-item>
+        {{ questionaire.results }}
+      </v-tab-item>
+      <v-tab-item>
+        {{ questionaire.resultComputation }}
+      </v-tab-item>
+    </v-tabs>
   </form>
 </template>
 
 <script>
 import { safeDump, safeLoad } from 'js-yaml'
 import { readFile, writeFile } from '~/api/git'
+import QuestionaireQuestion from '~/components/questionaire-question'
 
 export default {
   name: 'QuestionaireEditor',
+  components: { QuestionaireQuestion },
   data() {
     return {
       commitMessage: '',
