@@ -25,18 +25,20 @@ questions:
     type: boolean
     enableIf:
       var: variables.hasRisk.value
-derived:
+computations:
   - id: hasRisk
+    description: Check if any risk factor is presen
     value:
       or:
         - var: questions.workRiskContact.value
         - var: questions.patientHistoryRisk.value
         - var: questions.patientImmuneRisk.value
   - id: someContact
+    description: Check if there is a high probability of infectious contact
     value:
       or:
-        - var: questions.patientHistoryRisk.value
-        - var: questions.patientHistoryRisk.value
+        - var: questions.directContact.value
+        - var: questions.workRiskContact.value
 results:
   - id: symptoms_withContact_risk
     instructions:
