@@ -2,19 +2,19 @@
   <div class="elevation-1 pa-4 my-4">
     <v-text-field :value="condition.var" label="Condition" filled />
     <p>If True:</p>
-    <questionnaire-result-compute-case :value="ifTrue" />
+    <questionnaire-result-computation-case :value="ifTrue" />
     <p>If False:</p>
-    <questionnaire-result-compute-case :value="ifFalse" />
+    <questionnaire-result-computation-case :value="ifFalse" />
   </div>
 </template>
 
 <script>
-const QuestionnaireResultComputeCase = () =>
-  import('~/components/questionnaire/resultComputeCase')
+const QuestionnaireResultComputationCase = () =>
+  import('~/components/questionnaire/resultComputationCase')
 
 export default {
-  name: 'QuestionnaireResultComputeNode',
-  components: { QuestionnaireResultComputeCase },
+  name: 'QuestionnaireResultComputationNode',
+  components: { QuestionnaireResultComputationCase },
   props: {
     value: {
       type: Object,

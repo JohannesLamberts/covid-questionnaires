@@ -69,7 +69,7 @@ const HEADERS = [
 ]
 
 export default {
-  name: 'QuestionaireComputations',
+  name: 'QuestionnaireComputations',
   components: { QuestionnaireComputation },
   props: {
     value: {

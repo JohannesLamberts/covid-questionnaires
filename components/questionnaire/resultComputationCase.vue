@@ -1,16 +1,17 @@
 <template>
   <div>
-    <questionnaire-result-compute-node v-if="isNode" :value="value" />
+    <v-checkbox label="Result" :value="!isNode" />
+    <questionnaire-result-computation-node v-if="isNode" :value="value" />
     <v-text-field v-else :value="value" label="Result" filled />
   </div>
 </template>
 
 <script>
-import QuestionnaireResultComputeNode from '~/components/questionnaire/resultComputateNode'
+import QuestionnaireResultComputationNode from '~/components/questionnaire/resultComputationNode'
 
 export default {
-  name: 'QuestionnaireResultComputeCase',
-  components: { QuestionnaireResultComputeNode },
+  name: 'QuestionnaireResultComputationCase',
+  components: { QuestionnaireResultComputationNode },
   props: {
     value: {
       type: [Object, String],

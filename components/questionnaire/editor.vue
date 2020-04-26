@@ -27,13 +27,13 @@
         </div>
       </v-tab-item>
       <v-tab-item>
-        <questionaire-computations :value="questionnaire.computations" />
+        <questionnaire-computations :value="questionnaire.computations" />
       </v-tab-item>
       <v-tab-item>
         {{ questionnaire.results }}
       </v-tab-item>
       <v-tab-item>
-        <questionnaire-result-compute-node
+        <questionnaire-result-computation-node
           :value="questionnaire.resultComputation"
         />
       </v-tab-item>
@@ -45,14 +45,14 @@
 import { safeDump, safeLoad } from 'js-yaml'
 import { readFile, writeFile } from '~/api/git'
 import QuestionnaireQuestion from '~/components/questionnaire/question'
-import QuestionaireComputations from '~/components/questionnaire/computations'
-import QuestionnaireResultComputeNode from '~/components/questionnaire/resultComputateNode'
+import QuestionnaireComputations from '~/components/questionnaire/computations'
+import QuestionnaireResultComputationNode from '~/components/questionnaire/resultComputationNode'
 
 export default {
   name: 'QuestionnaireEditor',
   components: {
-    QuestionnaireResultComputeNode,
-    QuestionaireComputations,
+    QuestionnaireResultComputationNode,
+    QuestionnaireComputations,
     QuestionnaireQuestion
   },
   data() {
