@@ -21,10 +21,7 @@
         />
       </v-tab-item>
       <v-tab-item>
-        <div v-for="question of questionnaire.questions" :key="question.ident">
-          <h4>{{ question.id }}</h4>
-          <questionnaire-question :question="question" />
-        </div>
+        <questionnaire-table :questions="questionnaire.questions" />
       </v-tab-item>
       <v-tab-item>
         {{ questionnaire.derived }}
@@ -41,12 +38,12 @@
 
 <script>
 import { safeDump, safeLoad } from 'js-yaml'
+import QuestionnaireTable from './questionnaire-table'
 import { readFile, writeFile } from '~/api/git'
-import QuestionnaireQuestion from '~/components/questionnaire-question'
 
 export default {
   name: 'QuestionnaireEditor',
-  components: { QuestionnaireQuestion },
+  components: { QuestionnaireTable },
   data() {
     return {
       commitMessage: '',
