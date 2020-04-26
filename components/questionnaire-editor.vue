@@ -3,23 +3,21 @@
   <form v-else @submit.prevent="submit">
     <v-container>
       <v-row>
-        <v-col
-          ><v-text-field v-model="commitMessage" label="Mitteilung"
-        /></v-col>
+        <v-col><v-text-field v-model="commitMessage" label="Message"/></v-col>
         <v-col><v-btn type="submit">Save</v-btn></v-col>
       </v-row>
       <v-divider />
     </v-container>
     <v-tabs vertical>
-      <v-tab>Allgemeines</v-tab>
-      <v-tab>Fragen</v-tab>
-      <v-tab>Berechnungen</v-tab>
-      <v-tab>Ergebnisse</v-tab>
-      <v-tab>Ergebnisbaum</v-tab>
+      <v-tab>Meta</v-tab>
+      <v-tab>Questions</v-tab>
+      <v-tab>Calculations</v-tab>
+      <v-tab>Results</v-tab>
+      <v-tab>Result Calculatation</v-tab>
       <v-tab-item>
         <v-text-field
           v-model="questionnaire.meta.description"
-          label="Beschreibung"
+          label="Description"
         />
       </v-tab-item>
       <v-tab-item>
