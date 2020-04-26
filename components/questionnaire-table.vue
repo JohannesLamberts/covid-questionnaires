@@ -22,9 +22,13 @@ export default {
       ],
       headers: [
         {
-          text: 'ID',
+          text: 'Order',
           align: 'start',
           sortable: false,
+          value: 'order'
+        },
+        {
+          text: 'ID',
           value: 'id'
         },
         {
@@ -40,11 +44,12 @@ export default {
   },
   computed: {
     tableItems() {
-      return this.questions.map((question) => {
+      return this.questions.map((question, index) => {
         const { text: type } = this.questionTypes.find(
           (type) => type.value === question.type
         )
-        return { ...question, type }
+        const order = index + 1
+        return { order, ...question, type }
       })
     }
   }
