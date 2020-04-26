@@ -11,9 +11,9 @@
     <v-tabs vertical>
       <v-tab>Meta</v-tab>
       <v-tab>Questions</v-tab>
-      <v-tab>Calculations</v-tab>
+      <v-tab>Computations</v-tab>
       <v-tab>Results</v-tab>
-      <v-tab>Result Calculatation</v-tab>
+      <v-tab>Result Computation</v-tab>
       <v-tab-item>
         <v-text-field
           v-model="questionnaire.meta.description"
@@ -27,7 +27,7 @@
         </div>
       </v-tab-item>
       <v-tab-item>
-        {{ questionnaire.derived }}
+        <questionaire-computations :value="questionnaire.computations" />
       </v-tab-item>
       <v-tab-item>
         {{ questionnaire.results }}
@@ -43,10 +43,11 @@
 import { safeDump, safeLoad } from 'js-yaml'
 import { readFile, writeFile } from '~/api/git'
 import QuestionnaireQuestion from '~/components/questionnaire/question'
+import QuestionaireComputations from '~/components/questionnaire/computations'
 
 export default {
   name: 'QuestionnaireEditor',
-  components: { QuestionnaireQuestion },
+  components: { QuestionaireComputations, QuestionnaireQuestion },
   data() {
     return {
       commitMessage: '',
