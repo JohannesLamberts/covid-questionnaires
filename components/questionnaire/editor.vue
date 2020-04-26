@@ -42,7 +42,7 @@
 <script>
 import { safeDump, safeLoad } from 'js-yaml'
 import { readFile, writeFile } from '~/api/git'
-import QuestionnaireQuestion from '~/components/questionnaire-question'
+import QuestionnaireQuestion from '~/components/questionnaire/question'
 
 export default {
   name: 'QuestionnaireEditor',

@@ -2,7 +2,7 @@
   <questionnaire-editor />
 </template>
 <script>
-import QuestionnaireEditor from '~/components/questionnaire-editor'
+import QuestionnaireEditor from '~/components/questionnaire/editor'
 export default {
   components: { QuestionnaireEditor }
 }
