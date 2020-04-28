@@ -1,5 +1,5 @@
 meta:
-  description: A questionnaire to check if one should get tested for COVID-19
+  description: A questionnaire to check if one should get tested for COVID-19 ?!?
 questions:
   - id: symptoms
     description: Asking for general symptoms that could indicate COVID-19
